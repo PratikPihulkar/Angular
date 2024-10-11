@@ -1,0 +1,77 @@
+<div class="mdiv">
+  <div class="insideMdiv">
+    <div class="heading"><h3>Add Blog</h3></div>
+    <form [formGroup]="addBlog" (ngSubmit)="saveData()">
+      <div class="infoDiv" style="border-radius: 20px;">
+        <div class="form-row row p-5">
+          <h5>Blog Details:</h5>
+
+          <div class="form-group col-md-12">
+            <label for="blogTitle">Blog Title: <span class="text-danger">*</span></label>
+            <!-- <input type="text" class="form-control" id="blogTitle" formControlName="blogTitle" placeholder="Enter Full Name" pattern="[A-Za-z]+" > -->
+            <!-- <input type="text" class="form-control" id="blogTitle" formControlName="blogTitle" placeholder="Enter Full Name" pattern="[A-Za-z]" title="Only letters are allowed" onkeypress="return /[a-zA-Z\s]/i.test(event.key)"> -->
+            <input type="text" class="form-control" id="blogTitle" formControlName="blogTitle" placeholder="Enter Blog Title" pattern="[A-Za-z\s]+" title="Only letters and spaces are allowed" onkeypress="return /[a-zA-Z\s]/i.test(event.key)" required>
+            <div *ngIf="addBlog.get('blogTitle')?.touched && addBlog.get('blogTitle')?.invalid" class="text-danger">
+              Title is required.
+            </div>
+          </div>
+          
+          <div class="form-group col-md-12">
+            <label for="inputName4">Full Name:(created by) <span class="text-danger">*</span></label>
+            <!-- <input type="text" class="form-control" id="inputName4" formControlName="fullName" placeholder="Enter Full Name" pattern="[A-Za-z]+" > -->
+            <!-- <input type="text" class="form-control" id="inputName4" formControlName="fullName" placeholder="Enter Full Name" pattern="[A-Za-z]" title="Only letters are allowed" onkeypress="return /[a-zA-Z\s]/i.test(event.key)"> -->
+            <input type="text" class="form-control" id="inputName4" formControlName="fullName" placeholder="Enter Full Name" pattern="[A-Za-z\s]+" title="Only letters and spaces are allowed" onkeypress="return /[a-zA-Z\s]/i.test(event.key)" required>
+            <div *ngIf="addBlog.get('fullName')?.touched && addBlog.get('fullName')?.invalid" class="text-danger">
+              Full Name is required.
+            </div>
+          </div>
+
+        
+          <div class="form-group col-md-6">
+            <label for="date">Artical Date: <span class="text-danger">*</span></label>
+            <input type="date" class="form-control" id="date" formControlName="articalDate">
+            <div *ngIf="addBlog.get('articalDate')?.touched && addBlog.get('articalDate')?.invalid" class="text-danger">
+              <div *ngIf="addBlog.get('articalDate')?.errors?.['required']">Artical Date is required.</div>
+              <div *ngIf="addBlog.get('articalDate')?.errors?.['dateOutOfRange']">Date must be between 01/01/2000 and today.</div>
+            </div> 
+          </div>
+          
+
+          <div class="form-group col-md-6">
+            <label for="rate">Rating: <span class="text-danger">*</span></label>
+            <input type="number" class="form-control" id="rate" formControlName="rate">
+            <div *ngIf="addBlog.get('rate')?.touched && addBlog.get('rate')?.invalid" class="text-danger">
+              <div *ngIf="addBlog.get('rate')?.errors?.['required']">Rating is required.</div>
+              <div *ngIf="addBlog.get('rate')?.errors?.['min']">Rating must be at least 1.</div>
+              <div *ngIf="addBlog.get('rate')?.errors?.['max']">Rating must be at most 5.</div>
+            </div>
+          </div>
+          
+          <div class="form-group col-md-12">
+            <label for="image">Image Path: <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="image" formControlName="image" placeholder="Enter Image Path"  title="online image path " required>
+            <div *ngIf="addBlog.get('image')?.touched && addBlog.get('image')?.invalid" class="text-danger">
+              Image path is required.
+            </div>
+          </div>
+            
+          <div class="form-group col-md-12">
+            <label for="description">Description: <span class="text-danger">*</span></label>
+            <textarea class="form-control" id="description" formControlName="description" placeholder="Write Blog Description here"></textarea>
+            <div *ngIf="addBlog.get('description')?.touched && addBlog.get('description')?.invalid" class="text-danger">
+              <div *ngIf="addBlog.get('description')?.errors?.['required']">Description is required.</div>
+              <div *ngIf="addBlog.get('description')?.errors?.['maxlength']">Description must not exceed 500 characters. Current length: {{addBlog.get('description')?.value.length}}</div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+      <div class="d-flex justify-content-end p-3">
+        <button type="button" class="btn btn-danger mr-2" (click)="goBack()">Cancel</button>
+        <button type="submit" class="btn btn-success" [disabled]="addBlog.invalid" routerLink="blogList">Create</button>
+      </div>
+    </form>
+  </div>
+</div>

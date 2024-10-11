@@ -1,0 +1,37 @@
+.mdiv{
+   position: relative;
+    margin: 0px;
+    padding: 0px;
+}
+.insede{
+    position: relative;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 90%;
+    margin-left: 5%;
+}
+table{
+    position: relative;
+    margin: 5%;
+    margin-top: 0%;
+}
+.mdiv {
+    overflow-x: hidden;
+  }
+  
+  .inside {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  
+  .table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+
+
+

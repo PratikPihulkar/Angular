@@ -1,0 +1,73 @@
+<!-- comment-form.component.html -->
+<div class="mdiv">
+    <div class="inside">
+      <h5>Comments:</h5>
+      <div class="divi"*ngIf="!formVisible">
+        <div class="cmt"  *ngFor="let item of cmtArr">
+            <p>
+              {{item.comment}}
+            </p>
+            <p align="right" style="position: relative; bottom: 0px; padding: 0px;" class="para">
+              <small>{{item.name}}</small>
+               
+               <small [ngSwitch]="item.rate"  >
+                <p *ngSwitchCase="1">&#9733;&#9734;&#9734;&#9734;&#9734;</p>
+                <p *ngSwitchCase="2">&#9733;&#9733;&#9734;&#9734;&#9734;</p>
+                <p *ngSwitchCase="3">&#9733;&#9733;&#9733;&#9734;&#9734;</p>
+                <p *ngSwitchCase="4">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                <p *ngSwitchCase="5">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+               </small>
+           
+          </div>
+      </div>
+
+    </div>
+    <div class="addcmt heartbeat">
+      <button class="btn btn" (click)="openForm()">
+        <h1><i class="bi bi-chat-fill" style="color: rgb(74, 145, 142);"></i></h1>
+      </button>
+      <br />
+      <p style="font-size: 10px;">Add Comment</p>
+    </div>
+    
+    <div class="inputForm" [ngClass]="{'visible': formVisible}">
+      <form (ngSubmit)="saveComment()" [formGroup]="addComment">
+        <h6>Add Comment:</h6>
+
+
+        <div class="form-group">
+            <label for="inputName4">Full Name:(created by) <span class="text-danger">*</span></label>
+           <input type="text" class="form-control" id="inputName4" formControlName="naam" placeholder="Enter Full Name" pattern="[A-Za-z\s]+" title="Only letters and spaces are allowed" onkeypress="return /[a-zA-Z\s]/i.test(event.key)" required>
+            <div *ngIf="addComment.get('naam')?.touched && addComment.get('naam')?.invalid" class="text-danger">
+              Full Name is required.
+            </div>
+        </div>
+          
+        <div class="form-group">
+            <label for="readerComment">comment: <span class="text-danger">*</span></label>
+            <textarea class="form-control" id="readerComment" formControlName="readerComment" placeholder="Write Comment here" style=" max-height: 250px;min-height: 160px;"></textarea>
+            <div *ngIf="addComment.get('readerComment')?.touched && addComment.get('readerComment')?.invalid" class="text-danger">
+              <div *ngIf="addComment.get('readerComment')?.errors?.['required']">comment is required.</div>
+              <div *ngIf="addComment.get('readerComment')?.errors?.['maxlength']">comment must not exceed 500 characters. Current length: {{addComment.get('readerComment')?.value.length}}</div>
+            </div>
+        </div>
+        <div class="form-group col-md-12">
+            <label for="readerRating">Rating: <span class="text-danger">*</span></label>
+            <input type="number" class="form-control" id="readerRating" formControlName="readerRating">
+            <div *ngIf="addComment.get('readerRating')?.touched && addComment.get('readerRating')?.invalid" class="text-danger">
+              <div *ngIf="addComment.get('readerRating')?.errors?.['required']">Rating is required.</div>
+              <div *ngIf="addComment.get('readerRating')?.errors?.['min']">Rating must be at least 1.</div>
+              <div *ngIf="addComment.get('readerRating')?.errors?.['max']">Rating must be at most 5.</div>
+            </div>
+          </div>
+
+
+         <div class="formButtons ">
+          <button type="submit" class="btn btn-success" [disabled]="addComment.invalid">Save</button>
+          <button type="button" class="btn btn-danger" (click)="closeForm()">Cancel</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+  

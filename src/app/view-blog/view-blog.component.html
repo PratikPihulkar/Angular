@@ -1,0 +1,81 @@
+<div class="mdiv">
+    <div class="card" >
+        <h4 class="card-header" >{{tempArr.blogTitle|formatText}} 
+            <div class="diviv jello-horizontal " style="position: relative;float: right;" [ngSwitch]="tempArr.rate" >
+                <h3 id="star" style="float:right;"*ngSwitchCase="1">
+                    <span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+                </h3>
+                <h3 id="star" style="float:right;"*ngSwitchCase="2">
+                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+                </h3>
+                <h3 id="star" style="float:right;"*ngSwitchCase="3">
+                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+                </h3>
+                <h3 id="star" style="float:right;"*ngSwitchCase="4">
+                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span>
+                </h3>
+                <h3 id="star" style="float:right;"*ngSwitchCase="5">
+                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>
+                </h3>
+            </div>
+            </h4>
+        <div class="card-body" style="background-color: rgb(242, 235, 249);">
+            <div class="imgDiv" style="position: relative; margin: auto; border-radius: 20px;" class="d-flex w-50 puff-in-center">
+                <img src="{{tempArr.image}}" alt="" style="height:auto; width: 100%; border-radius: 20px;" width:300px>
+            </div>
+          <p class="card-text" style="margin-top: 2%; margin-bottom: 3%;">{{tempArr.description}}</p>
+          <div class="down d-flex w-100 justify-content-end " style="position: relative;">
+            <div class="d-flex flex-column"  style=" position: relative;  float:right;">
+                <h6 class="card-title"> {{tempArr.fullName| formatText}}</h6>
+                <p class="card-text" style="position: relative; float:right;">{{tempArr.articalDate |dateFormat}}</p>
+            </div>
+        </div>
+            
+          <a (click)="goBack()" class="btn btn-primary">Go Back</a>
+        </div>
+    </div>
+    <div class="comm">
+        <div class="divi">
+            <h5 style="margin-left: 5%;">Comment:</h5>
+            <div class="cmt"  *ngFor="let item of tempArr.comment">
+                <p>
+                  {{item.comment}}
+                </p>
+                <p>
+                    
+                  </p>
+                <div class="down d-flex w-100 justify-content-end " style="position: relative;">
+                    <div class="d-flex flex-column"  style=" position: relative;  float:right;">
+                        
+                        <div class="card-text" style="position: relative; float:right;" >
+                            <div class="diviv  " style="position: relative;float: right;" [ngSwitch]="item.rate"  >
+                                <h3 id="star" style="float:right;" *ngSwitchCase="1">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+                                </h3>
+                                <h3 id="star" style="float:right;" *ngSwitchCase="2">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+                                </h3>
+                                <h3 id="star" style="float:right;" *ngSwitchCase="3">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+                                </h3>
+                                <h3 id="star" style="float:right;" *ngSwitchCase="4">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span>
+                                </h3>
+                                <h3 id="star" style="float:right;" *ngSwitchCase="5">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>
+                                </h3>
+                            </div>
+                        </div>
+                        <h6 class="card-title"> {{item.name| formatText}}</h6>
+                    </div>
+                </div>
+                
+              </div>
+
+              <div class="div d-flex w-100 justify-content-end" style="position: relative;">
+                <button class="btn btn heartbeat" style="margin-right: 3%;"   (click)="addComment(userId)"> <h1><i class="bi bi-plus-circle-dotted"></i></h1></button>
+              </div>
+          </div>
+
+    </div>
+</div>

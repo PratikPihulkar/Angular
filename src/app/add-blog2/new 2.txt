@@ -1,0 +1,485 @@
+
+<div class="mdiv">
+    <div class="insideMdiv">
+        <form [formGroup]="RegistrationForms"(ngSubmit)="saveData()">
+            <div class="insideForm" >
+                <h5>Fill Details:</h5>
+                <div style="display: flex; align-items: center;">
+                    <h6 style="margin-right: 10px; white-space: nowrap; font-size: 20px; font-weight: 700; color:rgb(99, 99, 246)">Personal Detail</h6>
+                    <hr style="flex-grow: 1; border: none; border-top: 1px solid #000;">
+                </div>
+                
+                   <div class="row">
+                        <div class="coolinput col">
+                            <label for="input" class="text">Name:</label>
+                            <input type="text" class="form-control" formControlName="fullName" placeholder="Enter Full Name.." name="fullName" class="input">
+                            <div *ngIf="RegistrationForms.get('fullName')?.touched && RegistrationForms.get('fullName')?.invalid" class="text-danger">
+                                Name is required.
+                            </div>
+                        </div>
+                   </div>
+                <div class="row">
+                    
+                    <div class="coolinput col">
+                        <label for="input" class="text">Date Of Birth:</label>
+                        <input type="date" class="form-control" formControlName="dob" placeholder="Enter BirthDate" name="dob" id="dob">
+                        <div *ngIf="RegistrationForms.get('dob')?.touched && RegistrationForms.get('dob')?.invalid" class="text-danger">
+                            Date Of Birth is required.
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="row">
+                    <div class="coolinput col">
+                        <label for="input" class="text">Email:</label>
+                        <input type="text" class="form-control" formControlName="email" placeholder="Enter Email.." pattern="[^ @]*@[^ @]*" name="email" class="input">
+                        <div *ngIf="RegistrationForms.get('email')?.touched && RegistrationForms.get('email')?.invalid" class="text-danger">
+                            Email is required.
+                        </div>
+                        <div *ngIf="RegistrationForms.get('email')?.errors?.['email']">
+                            Please enter a valid email address.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">   
+                    <div class="coolinput col">
+                        <label for="input" class="text">About:</label>
+                        <textarea type="text" class="form-control" formControlName="about" placeholder="Enter about.." name="about" class="input" id="dob"></textarea>
+                        <div *ngIf="RegistrationForms.get('about')?.touched && RegistrationForms.get('about')?.invalid" class="text-danger">
+                            About is required.
+                        </div>
+                    </div>
+               </div>
+
+                
+               <div class="row">   
+                    <div class="coolinput col">
+                        <label for="input" class="text">Address:</label>
+                        <textarea type="text" class="form-control" formControlName="address" placeholder="Enter Address.." name="address" class="input" id="dob"></textarea>
+                        <div *ngIf="RegistrationForms.get('address')?.touched && RegistrationForms.get('address')?.invalid" class="text-danger">
+                            Address is required.
+                        </div>
+                    </div>
+               </div>
+               
+               <div class="row">
+                    <div class="coolinput col">
+                        <label for="input" class="text">Mobile:</label>
+                        <input type="text" class="form-control" formControlName="mobile" placeholder="10 Digit Only" name="mobile" class="input">
+                        <div *ngIf="RegistrationForms.get('mobile')?.touched && RegistrationForms.get('mobile')?.invalid" class="text-danger">
+                            Mobile No is required.
+                        </div>
+                        <div *ngIf="RegistrationForms.get('mobile')?.errors?.['pattern']" class="text-danger">
+                            Mobile No must be 10 digits, start with 6-9, and contain no alphabets.
+                        </div>
+                    </div>
+                    <div class="coolinput col">
+                        <label for="input" class="text">Graduation Year:</label>
+                        <input type="text" class="form-control" formControlName="graduationYear" placeholder="eg. 2024." name="graduationYear" class="input">
+                        <div *ngIf="RegistrationForms.get('graduationYear')?.touched && RegistrationForms.get('graduationYear')?.invalid" class="text-danger">
+                            Graduation Year is required.
+                        </div>
+                        <div *ngIf="RegistrationForms.get('graduationYear')?.errors?.['pattern']" class="text-danger">
+                            Graduation Year must be a 4-digit between 1950 and 2026.
+                        </div>
+                    </div>
+               </div>
+
+    <!-- <div class="field" *ngFor="let item of educationArr">
+        <p>{{item.college}}</p>
+                <div class="row education">
+                    <div class="coolinput col">
+                        <label for="input" class="text">College Name:</label>
+                        <input type="text" class="form-control" formControlName="college" placeholder="Enter College Name.." name="college" class="input">
+                        <div *ngIf="EducationForm.get('education.college')?.touched && EducationForm.get('education.college')?.invalid" class="text-danger">
+                        College Name is required.
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="coolinput col">
+                        <label for="input" class="text">Study Program:</label>
+                        <input type="text" class="form-control" formControlName="studyProgram" placeholder="eg. Bachelor of Engineering(BE)" name="studyProgram" class="input">
+                        <div *ngIf="EducationForm.get('education.studyProgram')?.touched && EducationForm.get('education.studyProgram')?.invalid" class="text-danger">
+                        Study Program is required.
+                        </div>
+                    </div>
+                    <div class="coolinput col">
+                        <label for="input" class="text">CGPA/Percentage/City:</label>
+                        <input type="text" class="form-control" formControlName="cgpa" placeholder="eg. 7.3 or Pune" name="cgpa" class="input">
+                        <div *ngIf="EducationForm.get('education.cgpa')?.touched && EducationForm.get('education.cgpa')?.invalid" class="text-danger">
+                        CGPA is required.
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="coolinput col">
+                        <label for="input" class="text">Join:</label>
+                        <input type="month" class="form-control" formControlName="startDate" placeholder="Enter Joining Date" name="startDate"  id="dob">
+                        <div *ngIf="EducationForm.get('education.startDate')?.touched && EducationForm.get('education.startDate')?.invalid" class="text-danger">
+                        Select joining date.
+                        </div>
+                    </div>
+                    <div class="coolinput col">
+                        <label for="input" class="text">Leave:</label>
+                        <input type="month" class="form-control" formControlName="endDate" placeholder="Enter Leaving Date" name="endDate"  id="dob">
+                        <div *ngIf="EducationForm.get('education.endDate')?.touched && EducationForm.get('education.endDate')?.invalid" class="text-danger">
+                        Select leaving date.
+                        </div>
+                    </div>
+                </div>   
+ </div> -->
+ 
+
+
+
+                <br>
+              <div class="d-flex justify-content-end">
+                <button class="btn btn-outline-success me-2" [disabled]="RegistrationForms.invalid">Save</button>
+              </div>
+            </div>
+        </form>
+        
+
+
+
+        <!--Education Section //////////////////////////////// -->
+        <div class="insideForm" >
+        <form [formGroup]="EducationForm" >
+            <div style="display: flex; align-items: center;">
+                <h6 style="margin-right: 10px; white-space: nowrap; font-size: 20px; font-weight: 700; color:rgb(99, 99, 246)">Education Detail</h6>
+                <hr style="flex-grow: 1; border: none; border-top: 1px solid #000;">
+            </div>
+    <!-- <div class="field" *ngFor="let item of educationArr"> -->
+        <div  formArrayName="items" >
+        <div *ngFor="let item of items.controls; let i = index;"  [formGroupName]="i" style="background-color: whitesmoke; padding: 1rem; margin-bottom: 1rem;">
+
+                <div class="row education">
+                    <div class="coolinput col">
+                        <label for="input" class="text">College Name:</label>
+                        <input type="text" class="form-control" formControlName="college" placeholder="Enter College Name.." name="college" class="input" >
+                        <div *ngIf="item.get('college')?.touched && item.get('college')?.invalid" class="text-danger">
+                        College Name is required.
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="coolinput col">
+                        <label for="input" class="text">Study Program:</label>
+                        <input type="text" class="form-control" formControlName="studyProgram" placeholder="eg. Bachelor of Engineering(BE)" name="studyProgram" class="input">
+                        <!-- <div *ngIf="item.get('studyProgram')?.touched && item.get('studyProgram')?.invalid" class="text-danger">
+                        Study Program is required.
+                        </div> -->
+                    </div>
+                    <div class="coolinput col">
+                        <label for="input" class="text">CGPA/Percentage/City:</label>
+                        <input type="text" class="form-control" formControlName="cgpa" placeholder="eg. 7.3 or Pune" name="cgpa" class="input">
+                        <!-- <div *ngIf="item.get('cgpa')?.touched && item.get('cgpa')?.invalid" class="text-danger">
+                        CGPA is required.
+                        </div> -->
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 1rem;">
+                    <div class="coolinput col">
+                        <label for="input" class="text">Join:</label>
+                        <input type="month" class="form-control" formControlName="startDate" placeholder="Enter Joining Date" name="startDate"  id="dob">
+                        <!-- <div *ngIf="EducationForm.get('education.startDate')?.touched && EducationForm.get('education.startDate')?.invalid" class="text-danger">
+                        Select joining date.
+                        </div> -->
+                    </div>
+                    <div class="coolinput col" >
+                        <label for="input" class="text">Leave:</label>
+                        <input type="month" class="form-control" formControlName="endDate" placeholder="Enter Leaving Date" name="endDate"  id="dob">
+                        <!-- <div *ngIf="EducationForm.get('education.endDate')?.touched && EducationForm.get('education.endDate')?.invalid" class="text-danger">
+                        Select leaving date.
+                        </div> -->
+                    </div>
+                </div>   
+    
+           
+                  
+ 
+ <!-- </div> -->
+ 
+
+ 
+                
+            </div>
+        </div>
+      
+        </form>
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-outline-success me-2" (click)="saveEducation(this.RegistrationForms)">Save</button>
+            <!-- [disabled]="RegistrationForms.invalid"  -->
+            <button class="btn btn-outline-secondary me-2" [disabled]="RegistrationForms.invalid" (click)="addItem()">Add Education</button>
+        
+        </div>
+    </div>
+             
+    </div>
+</div>
+
+
+import { Component, Input, input, OnInit } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms'
+import { subscribe } from 'diagnostics_channel';
+import { DataStoreService } from '../../Service/data-store.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { log } from 'console';
+
+interface Education {
+  college: any,
+  studyProgram: any
+  cgpa:any
+  startDate:any
+  endDate:any
+}
+@Component({
+  selector: 'app-fill-details',
+  templateUrl: './fill-details.component.html',
+  styleUrl: './fill-details.component.css'
+})
+export class FillDetailsComponent  implements OnInit{
+
+@Input()id:any;
+
+  RegistrationForms!:any
+  EducationForm!:any
+  constructor(private fb:FormBuilder, private dataStoreService: DataStoreService,private router:Router,private route:ActivatedRoute ){
+
+  }
+  
+  emptyArray:any=[]
+  educationArr: Education[] = [];
+  // educationArr:any
+  tempVar:any
+  
+  ngOnInit(): void {
+    this.id=this.route.snapshot.paramMap.get("id")
+
+    this.RegistrationForms = this.fb.group({
+      id: ['', Validators.required ,],
+      fullName: ['', Validators.required ,] ,//^[a-zA-Z]+(\s[a-zA-Z]+)?$    Validators.pattern('^[a-zA-Z]+$')  Validators.pattern('^[a-zA-Z]+$')
+      dob:['', Validators.required,  ],
+      email:['', [Validators.required, Validators.maxLength(100) ,Validators.email],], 
+      address:['', [Validators.required, Validators.maxLength(500) ]], 
+      image:['', [Validators.required]],
+      mobile:['', [Validators.required , Validators.pattern('^[6-9][0-9]{9}$')]],
+      graduationYear:['', [Validators.required,Validators.pattern('^(19[5-9][0-9]|20[0-2][0-6])$') ]],
+      password: ['', [Validators.required]],
+      confirmPassword: ['', Validators.required],
+      education: new FormArray([]),
+      experience:[],
+      skills:[''],
+      about:['']
+    });
+   
+    
+    
+    this.EducationForm = this.fb.group({
+      items: this.fb.array([this.createItem()])
+    });
+    // this.EducationForm=this.fb.group({
+    //   college: ['', [Validators.required]],
+    //   studyProgram:['', [Validators.required]],
+    //   cgpa:['', [Validators.required]],
+    //   startDate:['', [Validators.required]],
+    //   endDate:['', [Validators.required]],
+    // })
+
+    
+
+    
+    this.dataStoreService.getSingleUser(this.id).subscribe((res)=>{
+      this.RegistrationForms.patchValue(res)
+      this.EducationForm.patchValue(res.education[0])
+
+           console.log("vvvvvvvvvvvvvvvvvvv"+ res.education)
+   
+    })
+  }
+  
+  createItem(): FormGroup {
+    return this.fb.group({
+      college: ['' ],
+      studyProgram:[''],
+      cgpa:['' ],
+      startDate:['' ],
+      endDate:[''],
+    });
+
+  }
+
+  get items(): FormArray {
+    return this.EducationForm.get('items') as FormArray;
+  }
+  orderForm: FormGroup|any;
+  // items: FormArray|any;
+
+  addItem(): void {
+    // this.items = this.EducationForm.get('items') as FormArray;
+    this.items.push(this.createItem());
+  }
+
+
+saveData(){
+  
+  this.dataStoreService.updateUser(this.RegistrationForms.value).subscribe((res:any)=>{
+    // window.location.reload()    
+  })
+}
+length:any
+saveEducation(data:any){
+  // this.addItem();
+  console.log(this.items);
+  
+    this.RegistrationForms.value.education = this.items.value
+
+  this.dataStoreService.addEducation(this.id, data.value ).subscribe((res:any)=>{
+    // window.location.reload()    
+  })
+}
+
+}
+/* From Uiverse.io by kamehame-ha */ 
+.coolinput {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    position: static;
+    /* max-width: 240px; */
+  }
+  
+  .coolinput label.text {
+    font-size: 1.0rem;
+    color: #4f5d78;
+    font-weight: 700;
+    position: relative;
+    top: 0.5rem;
+    margin: 0 0 0 7px;
+    padding: 0 3px;
+    background: #ffffff;
+    width: fit-content;
+  }
+  
+  .coolinput input[type=text].input {
+    padding: 11px 10px;
+    font-size: 1rem;
+    border: 2px #818CF8 solid;
+    border-radius: 5px;
+    /* background: #ffffff; */
+  }
+  
+
+  .coolinput input[type=text].input:focus {
+    outline: none;
+    
+  }
+
+  .date-input:focus {
+    outline: 2px solid blue;
+    outline-offset: 2px;
+  }
+  #doj,#dob{
+    border: 2px solid #818CF8;
+    border-radius: 5px;
+    height: 50px;
+  }
+
+  .insideForm{
+    width: 97%;
+    margin: auto;
+    padding: 1rem;
+    border: 1px solid ;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+
+  }
+
+ 
+  @media screen and (max-width:1100px) {
+    .insideForm{
+        width: 80%;    
+    } 
+  }
+  @media screen and (max-width:700px) {
+    .insideForm{
+        width: 95%;    
+    } 
+  }
+
+  label{
+    position: relative;
+    margin-top: 1rem;
+  }
+  .row{
+    margin-bottom: 1rem;
+  }
+.back{
+  background-color: aliceblue;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class DataStoreService {
+  constructor(private http:HttpClient,){
+  }
+
+
+  loginVar=false
+  globleId:any
+
+  tepmArr:any[]=[]
+
+  logout(){
+    this.loginVar=false
+  }
+
+  
+  userRegistration(data:any):Observable<any>{
+    return this.http.post<any>('http://localhost:3000/user', data)
+  } 
+
+  getUserList():Observable<any>{
+    return this.http.get('http://localhost:3000/user')
+  }
+
+  login(id:any ):Observable<any> {
+    return  this.http.get('http://localhost:3000/user/'+id)
+ }
+
+ getSingleUser(id:any):Observable<any>{
+  return  this.http.get('http://localhost:3000/user/'+id)
+ }
+
+updateUser( data: any): Observable<any> {
+  const url = 'http://localhost:3000/user/'+data.id+"/"
+  return this.http.put(url, data);
+}
+
+// Education
+getUserEducation(id:any){
+  return this.http.get('http://localhost:3000/user/'+id) ///NOT WORKING
+}
+
+addEducation(id:any, data:any[]=[], ){
+  return this.http.put('http://localhost:3000/user/'+id , data)
+}
+ 
+
+ 
+
+}

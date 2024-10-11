@@ -1,0 +1,204 @@
+{
+  "blogList": [
+    {
+      "id": "6ebd",
+      "blogTitle": "HTML",
+      "fullName": "Kranti Veer",
+      "articalDate": "2024-08-28",
+      "description": "HTML is great for declaring static documents, but it falters when we try to use it for declaring dynamic views in web-applications. AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop.",
+      "image": "https://www.cnet.com/a/img/resize/b9b09bd80b3129a6a5da79d9bd17487b977c9677/hub/2014/10/27/40194e6e-2544-419e-a340-f7c17b2e83c5/html5-wow-image-w3c.jpg?auto=webp&width=768",
+      "rate": 1,
+      "comment": [
+        {
+          "name": "Pratik Pihulkar",
+          "comment": "Nice Blog , ",
+          "rate": "3"
+        },
+        {
+          "name": "Nalanda Godi",
+          "comment": "Nice Blog ,declaring static documents ",
+          "rate": "5"
+        },
+        {
+          "name": "mukesh Khanna",
+          "comment": "Nice Blog ,try to use it for declaring dynamic views ",
+          "rate": "2"
+        },
+        {
+          "name": "Lala Kadam",
+          "comment": "when we try to use it for declaring dynamic views in web-applications. AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop ,when we try to use it for declaring dynamic views in web-applications. AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop  ",
+          "rate": "4"
+        }
+      ]
+    },
+    {
+      "id": "8c09",
+      "blogTitle": "CPP",
+      "fullName": "Sambha Adani",
+      "articalDate": "2024-08-05",
+      "description": "We recommend reading this tutorial, in the sequence listed in the left menu.\n\nC++ is an object oriented language and some concepts may be new. Take breaks when needed, and go over the examples as many times as needed.C++ is a popular programming language.\n\nC++ is used to create computer programs, and is one of the most used language in game development.\n\nC++ was developed as an extension of C, and both languages have almost the same syntax.",
+      "image": "https://backendapi.iihtsrt.com/wp-content/uploads/2022/04/CPP.jpg",
+      "rate": 4,
+      "comment": [
+        {
+          "name": "Munna Yadav",
+          "comment": "Nice Blog",
+          "rate": "3"
+        },
+        {
+          "name": "Ratan Bhandar",
+          "comment": "Wa bhai wa kya likha hai",
+          "rate": "2"
+        },
+        {
+          "name": "Kali Charan",
+          "comment": "Nice HandWritting ",
+          "rate": "4"
+        },
+        {
+          "name": "Ratan Bhandar",
+          "comment": "well done my child likha hya ",
+          "rate": "5"
+        },
+        {
+          "name": "Ratan Bhandar",
+          "comment": "Wa bhai wa kya likha hai",
+          "rate": "2"
+        }
+      ]
+    },
+    {
+      "id": "8dad",
+      "blogTitle": "React ",
+      "fullName": "Shubham Kale",
+      "articalDate": "2024-08-08",
+      "description": "AngularJS is a toolset for building the framework most suited to your application development. It is fully extensible and works well with other libraries. Every feature can be modified or replaced to suit your unique development workflow and feature needs. Read on to find out how.AngularJS is a toolset for building the framework most suited to your application development. It is fully extensible and works well with other libraries. Every feature can be modified or replaced to suit you.",
+      "image": "https://www.mobikasa.com/blog/wp-content/uploads/2021/02/Why-Choose-AngularJS-for-Web-Development-in-2021.jpg",
+      "rate": 5,
+      "comment": [
+        {
+          "name": "Kali Charan",
+          "comment": "Nice HandWritting ",
+          "rate": "4"
+        },
+        {
+          "name": "Ratan Bhandar",
+          "comment": "well done my child likha hya ",
+          "rate": "5"
+        },
+        {
+          "name": "Ratan Bhandar",
+          "comment": "Wa bhai wa kya likha hai",
+          "rate": "2"
+        }
+      ]
+    },
+    {
+      "id": "4f7c",
+      "blogTitle": "Java",
+      "fullName": "Tejul Kashyap",
+      "articalDate": "2000-07-26",
+      "description": "The Oracle Java License changed for releases starting April 16, 2019. The Oracle Technology Network License Agreement for Oracle Java SE is substantially different from prior Oracle Java licenses. This license permits certain uses, such as personal use and development use, at no cost -- but other uses authorized under prior Oracle Java licenses may no longer be available. Please review the terms carefully before downloading and using this product. An FAQ is available here.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM9PeWvphnXOtwq5lJ_uyuXs6mugQ0Dhqxxw&s",
+      "rate": 5,
+      "comment": [
+        {
+          "name": "Munna Yadav",
+          "comment": "Nice Blog",
+          "rate": "3"
+        },
+        {
+          "name": "Ratan Bhandar",
+          "comment": "Wa bhai wa kya likha hai",
+          "rate": "2"
+        },
+        {
+          "name": "Ratan Bhandar",
+          "comment": "Wa bhai wa kya likha hai",
+          "rate": "2"
+        }
+      ]
+    },
+    {
+      "id": "35c3",
+      "blogTitle": "GoLang",
+      "fullName": "Jaime Enrique Garc",
+      "articalDate": "2024-08-07",
+      "description": "At the time, no single team member knew Go, but within a month, everyone was writing in Go and we were building out the endpoints. It was the flexibility, how easy it was to use, and the really cool concept behind Go (how Go handles native concurrency, garbage collection, and of course safety+speed.) that helped engage us during the build. Also, who can beat that cute mascot",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcJHcss9Pr2d_EbmOfNwfKW8caZyRo3Ox6Kw&s",
+      "rate": 3,
+      "comment": [
+        {
+          "name": "Ratan Bhandar",
+          "comment": "well done my child likha hya ",
+          "rate": "5"
+        },
+        {
+          "name": "Ratan Bhandar",
+          "comment": "Wa bhai wa kya likha hai",
+          "rate": "2"
+        }
+      ]
+    },
+    {
+      "id": "67f6",
+      "blogTitle": "C Sharp",
+      "fullName": "Sandip Trivvedi",
+      "articalDate": "2024-08-01",
+      "description": "C# 13 is supported on .NET 9. For more information, see C# language versioning.\n\nYou can download the latest .NET 9 preview SDK from the .NET downloads page. You can also download Visual Studio 2022 - preview, which includes the .NET 9 Preview SDK.\n\nNew features are added to the \"What's new in C#\" page when they're available in public preview releases. The working set section of the roslyn feature status page tracks when upcoming features are merged into the main branch.\n\n",
+      "image": "https://assets.codeguru.com/uploads/2021/08/C-Sharp-Tutorials.png",
+      "rate": 5,
+      "comment": [
+        {
+          "name": "Ratan Bhandar",
+          "comment": "cool  bhai wa kya well done  ",
+          "rate": "5"
+        }
+      ]
+    },
+    {
+      "id": "7767",
+      "blogTitle": "Node Js",
+      "fullName": "Pratik Pihulkar",
+      "articalDate": "2024-08-01",
+      "description": "Node.js® is a free, open-source, cross-platform JavaScript runtime environment that lets developers create servers, web apps, command line tools and scripts.Node.js® is a free, open-source, cross-platform JavaScript runtime environment that lets developers create servers, web apps, command line tools and scripts.Node.js® is a free, open-source, cross-platform JavaScript runtime environment that lets developers create servers, web apps, command line tools and scripts.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
+      "rate": 2,
+      "comment": [
+        {
+          "name": "Munna Yadav",
+          "comment": "Nice Blog",
+          "rate": "3"
+        },
+        {
+          "name": "Ratan Bhandar",
+          "comment": "Wa bhai wa kya likha hai",
+          "rate": "2"
+        },
+        {
+          "name": "Kali Charan",
+          "comment": "Nice HandWritting ",
+          "rate": "4"
+        },
+        {
+          "name": "Ratan Bhandar",
+          "comment": "well done my child likha hya ",
+          "rate": "5"
+        },
+        {
+          "name": "Ratan Bhandar",
+          "comment": "Wa bhai wa kya likha hai",
+          "rate": "2"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "id": "4f7c",
+      "naam": "temp",
+      "readerComment": "temp",
+      "readerRating": 5
+    }
+  ]
+}
